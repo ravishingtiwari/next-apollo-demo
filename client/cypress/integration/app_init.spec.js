@@ -175,7 +175,7 @@ const response = {
 describe('app initialisation', () => {
   it('loads initial data', () => {
     cy.server()
-    cy.intercept({ method: 'POST', url: '**/graphqa*' }, response)
+    cy.intercept({ method: 'POST', url: '**/graphql*' }, response)
    // cy.route('POST', 'https://contact-server-rt.herokuapp.com/graphql/', {})
     cy.visit('/')
   })
