@@ -1,6 +1,7 @@
 import React from 'react'
+import { ContactSearchArgs } from '../models/contact.search.args'
 
-export const ContactSearch = (props: any) => {
+export const ContactSearch = (props: { onContactSearch: (e: ContactSearchArgs) => void }) => {
   return (
     <div className="row">
       <div className="col">

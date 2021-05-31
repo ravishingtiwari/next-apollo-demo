@@ -1,10 +1,11 @@
 import React from 'react'
-import { Contact } from './contact.component'
+import { Contact } from '../models/contact'
+import { ContactComponent } from './contact.component'
 
-export const AddressBook = (props: any) => {
-  const t = props.entries.map((contact: { id:string, name: string, address: string, email: string, phone: string }) => {
+export const AddressBook = (props: { entries: Contact[] }) => {
+  const t = props.entries.map((contact: Contact) => {
     return (
-      <Contact key={contact.id} contact={contact} className="col" />
+      <ContactComponent key={contact.id} contact={contact} className="col" />
     )
   })
   return (

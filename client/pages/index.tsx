@@ -1,31 +1,12 @@
 import React, { useState } from 'react'
 import { Header } from '../components/header.component'
-import { useQuery, gql } from '@apollo/client'
+import { useQuery } from '@apollo/client'
+import { peopleQuery } from './api/queries'
 import { AddressBook } from '../components/address-book.component'
 import { LoadMore } from '../components/load-more.component'
+import { contactFilter } from '../lib/filters'
 
-const peopleQuery = gql`
-  query people($offset: Int, $limit: Int) {
-    people(offset: $offset, limit: $limit) {
-      id
-      name
-      address
-      email
-      phone
-    }
-  }
-`
-
-const contactFilter = (contact: { name: string }, nameFilter:string) => {
-  let result = true
-  if (nameFilter) {
-    result = contact.name.toLowerCase().includes(nameFilter.toLowerCase())
-  }
-
-  return result
-}
-
-export default function Main () {
+export default function Home () {
   const [contacts, setContacts] = useState(new Array())
   const { loading, data, fetchMore } = useQuery(peopleQuery, {
     variables: {
@@ -49,8 +30,8 @@ export default function Main () {
   }
 
   const onContactSearch = (e: any) => {
-    const r = data.people.filter((contact: any) => contactFilter(contact, e.target.value))
-    setContacts(r)
+    const filteredContacts = data.people.filter((contact: any) => contactFilter(contact, e.target.value))
+    setContacts(filteredContacts)
   }
 
   if (loading) return <p>Loading...</p>

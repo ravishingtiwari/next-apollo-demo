@@ -1,8 +1,9 @@
 import React from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faPhone, faEnvelope, faMapMarker } from '@fortawesome/free-solid-svg-icons'
+import { Contact } from '../models/contact'
 
-export const Contact = (props:any) => {
+export const ContactComponent = (props: { contact: Contact }) => {
   return (
     <div key={props.contact.name} className="col">
       <div className="card">
