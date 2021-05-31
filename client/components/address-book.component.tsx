@@ -5,7 +5,7 @@ import { ContactComponent } from './contact.component'
 export const AddressBook = (props: { entries: Contact[] }) => {
   const t = props.entries.map((contact: Contact) => {
     return (
-      <ContactComponent key={contact.id} contact={contact} className="col" />
+      <ContactComponent key={contact.id} contact={contact} />
     )
   })
   return (

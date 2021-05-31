@@ -11,7 +11,7 @@ server.start().then(() => {
   app.disable('x-powered-by');
   app.use('/hi', (req, res, next) => { res.json({message:'Hi'}) });
   server.applyMiddleware({ app });
-  const port = 3000; // process.env.PORT || 4000;
+  const port = process.env.PORT || 4000;
   const HOST = '0.0.0.0';
   return { app: app.listen(port, HOST), port: port };
 }).then((res) => {

@@ -5,7 +5,7 @@
   "scripts": {
     "dev": "next dev -p 3001",
     "build": "next build",
-    "start": "next start",
+    "start": "next start -p $PORT",
     "lint": "eslint 'pages/index.tsx'"
   },
   "dependencies": {
@@ -19,7 +19,6 @@
     "react": "17.0.2",
     "react-dom": "17.0.2"
   },
-  "proxy": "http://server:3000",
   "devDependencies": {
     "@types/react": "17.0.8",
     "@typescript-eslint/eslint-plugin": "^4.25.0",

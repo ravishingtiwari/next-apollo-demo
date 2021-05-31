@@ -16,6 +16,6 @@ const cache = new InMemoryCache({
 })
 
 export const contactApolloClient = new ApolloClient({
-  uri: 'http://localhost:3000/graphql',
+  uri: 'https://contact-server-rt.herokuapp.com/graphql',
   cache: cache
 })
