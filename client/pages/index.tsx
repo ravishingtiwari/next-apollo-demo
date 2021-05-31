@@ -6,7 +6,7 @@ import { AddressBook } from '../components/address-book.component'
 import { LoadMore } from '../components/load-more.component'
 import { contactFilter } from '../lib/filters'
 
-export default function Home () {
+export default function Home() {
   const [contacts, setContacts] = useState(new Array())
   const { loading, data, fetchMore } = useQuery(peopleQuery, {
     variables: {
