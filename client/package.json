@@ -5,8 +5,9 @@
   "scripts": {
     "dev": "next dev -p 3001",
     "build": "next build",
-    "start": "next start -p $PORT",
-    "lint": "eslint 'pages/index.tsx'"
+    "start": "next start",
+    "lint": "eslint 'pages/index.tsx'",
+    "cypress:open": "cypress open"
   },
   "dependencies": {
     "@apollo/client": "^3.3.19",
@@ -23,6 +24,7 @@
     "@types/react": "17.0.8",
     "@typescript-eslint/eslint-plugin": "^4.25.0",
     "@typescript-eslint/parser": "^4.25.0",
+    "cypress": "^7.4.0",
     "eslint": "^7.27.0",
     "eslint-config-standard": "^16.0.3",
     "eslint-plugin-import": "^2.23.4",
